@@ -12,13 +12,9 @@ import java.io.IOException;
 @WebServlet("/users")
 public class GetUsersServlet extends HttpServlet {
 
-
     @Override
-    protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws SecurityException, IOException, ServletException {
-
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("users", Warehouse.getInstance().getUsers());
-        req.getRequestDispatcher("/users.jsp").forward(req, resp);
-
+        req.getRequestDispatcher("/users").forward(req, resp);
     }
-
 }

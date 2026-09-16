@@ -14,13 +14,12 @@ import java.io.IOException;
 public class AddUserServlet extends HttpServlet {
 
     @Override
-    protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/add.jsp").forward(req, resp);
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/add").forward(req, resp);
     }
 
     @Override
-    protected void doPost (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String firstName = req.getParameter("firstName");
         String lastName = req.getParameter("lastName");
 
@@ -28,6 +27,6 @@ public class AddUserServlet extends HttpServlet {
         Warehouse.getInstance().addUser(user);
 
         req.setAttribute("user", user);
-        req.getRequestDispatcher("/add.jsp").forward(req, resp);
+        req.getRequestDispatcher("/add").forward(req, resp);
     }
 }
