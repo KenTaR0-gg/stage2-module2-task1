@@ -15,7 +15,7 @@ public class AddUserServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/views/add.jsp").forward(req, resp);
+        req.getRequestDispatcher("/jsp/add.jsp").forward(req, resp);
     }
 
     @Override
@@ -27,6 +27,6 @@ public class AddUserServlet extends HttpServlet {
         Warehouse.getInstance().addUser(user);
 
         req.setAttribute("user", user);
-        req.getRequestDispatcher("/views/add.jsp").forward(req, resp);
+        req.getRequestDispatcher("/jsp/add.jsp").forward(req, resp);
     }
 }
